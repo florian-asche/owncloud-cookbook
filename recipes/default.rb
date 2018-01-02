@@ -426,6 +426,12 @@ end
 # Enable cron for background jobs
 #==============================================================================
 
+execute 'chown-data-www' do
+  command 'chown -R www-data:www-data /var/www/'
+  user 'root'
+  action :run
+end
+
 include_recipe 'cron'
 
 cron_command =
