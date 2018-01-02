@@ -427,7 +427,7 @@ end
 #==============================================================================
 
 execute 'chown-data-www' do
-  command 'chown -R www-data:www-data /var/www/'
+  command 'chown -R www-data:www-data /var/www/ && chmod 774 /var/www'
   user 'root'
   action :run
 end
