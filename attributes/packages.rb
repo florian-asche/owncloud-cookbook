@@ -22,10 +22,10 @@
 case node['platform_family']
 when 'debian'
   default['owncloud']['packages']['core'] =
-    %w(php5-gd php5-intl php5-curl php5-json smbclient)
-  default['owncloud']['packages']['sqlite'] = %w(php5-sqlite)
-  default['owncloud']['packages']['mysql'] = %w(php5-mysql)
-  default['owncloud']['packages']['pgsql'] = %w(php5-pgsql)
+    %w(php-gd php-intl php-curl php-json smbclient)
+  default['owncloud']['packages']['sqlite'] = %w(php7.0-sqlite3)
+  default['owncloud']['packages']['mysql'] = %w(php7.0-mysql)
+  default['owncloud']['packages']['pgsql'] = %w(php7.0-pgsql)
 when 'rhel'
   if node['platform'] != 'amazon' && node['platform_version'].to_f < 6
     default['owncloud']['packages']['core'] =
